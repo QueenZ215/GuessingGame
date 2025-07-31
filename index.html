@@ -18,8 +18,11 @@
             while (!win){
                 
                 guess ++;
+                // subtract the computers number from the users choice could have done this in the ternary but this felt shorter and more readable
                 let compare = pChoice - cNum;
+                //if compare is less then zero message is low greater then zero high if its nither its assumed its zero and message is set to false
                 let message = (compare < 0)?"low":(compare > 0) ? "high": false;
+                // if message is false player guessed right
                 if (!message) {
                     win = true;
                     pChoice = prompt(`You guessed it in ${guess} guesses!`);
